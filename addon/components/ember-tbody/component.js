@@ -235,6 +235,14 @@ export default Component.extend({
   */
   canSelect: bool('onSelect'),
 
+   /**
+    String value that allows a custom checkbox component to be used
+
+    @argument checkboxComponent
+    @type string? (null)
+  */
+  checkboxComponent: defaultTo(null),
+
   dataTestRowCount: null,
 
   'data-test-row-count': readOnly('dataTestRowCount'),

@@ -5,12 +5,21 @@
         class="et-toggle-select {{unless shouldShowCheckbox 'et-speech-only'}}"
         data-test-select-row-container
       >
-        {{-ember-table-private/simple-checkbox
-          data-test-select-row=true
-          checked=rowMeta.isGroupSelected
-          onClick="onSelectionToggled"
-          ariaLabel="Select row"
-        }}
+        {{#if checkboxComponent}}
+          {{component checkboxComponent
+            data-test-select-row=true
+            checked=rowMeta.isGroupSelected
+            onClick="onSelectionToggled"
+            ariaLabel="Select row"
+          }}
+        {{else}}
+          {{-ember-table-private/simple-checkbox
+            data-test-select-row=true
+            checked=rowMeta.isGroupSelected
+            onClick="onSelectionToggled"
+            ariaLabel="Select row"
+          }}
+        {{/if}}
         <span></span>
       </span>
     {{/if}}
